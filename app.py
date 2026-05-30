@@ -1,4 +1,3 @@
-```python
 import streamlit as st
 import numpy as np
 import nibabel as nib
@@ -474,4 +473,3 @@ else:
     st.info(
         "Upload a scan or choose a sample MRI."
     )
-```
