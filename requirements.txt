@@ -3,6 +3,4 @@ numpy
 nibabel
 onnxruntime
 matplotlib
-pathlib
-tempfile
 scipy
