@@ -458,29 +458,29 @@ if volume is not None:
 
             st.success(label)
 
-        st.write(
-            f"### Confidence: {confidence*100:.2f}%"
-        )
+        # st.write(
+        #     f"### Confidence: {confidence*100:.2f}%"
+        # )
 
-        st.progress(float(confidence))
+        # st.progress(float(confidence))
 
-        if confidence >= 0.8:
+        # if confidence >= 0.8:
 
-            st.warning(
-                "High confidence prediction."
-            )
+        #     st.warning(
+        #         "High confidence prediction."
+        #     )
 
-        elif confidence >= 0.6:
+        # elif confidence >= 0.6:
 
-            st.info(
-                "Moderate confidence prediction."
-            )
+        #     st.info(
+        #         "Moderate confidence prediction."
+        #     )
 
-        else:
+        # else:
 
-            st.info(
-                "Low confidence prediction."
-            )
+        #     st.info(
+        #         "Low confidence prediction."
+        #     )
 
 else:
 
