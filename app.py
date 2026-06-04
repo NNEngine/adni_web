@@ -278,12 +278,26 @@ volume = None
 
 if uploaded_file is not None:
 
+    filename = uploaded_file.name.lower()
+
+    if filename.endswith(".nii.gz"):
+        suffix = ".nii.gz"
+
+    elif filename.endswith(".nii"):
+        suffix = ".nii"
+
+    else:
+        st.error(
+            "Unsupported file format. Please upload .nii or .nii.gz"
+        )
+        st.stop()
+
     with tempfile.NamedTemporaryFile(
         delete=False,
-        suffix=".nii.gz"
+        suffix=suffix
     ) as tmp:
 
-        tmp.write(uploaded_file.read())
+        tmp.write(uploaded_file.getbuffer())
 
         temp_path = tmp.name
 
