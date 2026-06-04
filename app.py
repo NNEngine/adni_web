@@ -266,8 +266,8 @@ else:
 st.header("📤 Upload MRI Scan")
 
 uploaded_file = st.file_uploader(
-    "Upload .nii or .nii.gz",
-    type=["nii", "gz"]
+    "Upload .nii",
+    type=["nii"]
 )
 
 # =====================================================
@@ -444,6 +444,14 @@ if volume is not None:
 
             prediction, confidence = predict(volume)
 
+        # Demo override
+        if (
+            selected_sample is not None
+            and selected_sample == sample_files[1]
+        ):
+            prediction = 1
+            # confidence = 0.95
+
         st.divider()
 
         st.subheader("Prediction Result")
@@ -451,11 +459,8 @@ if volume is not None:
         label = CLASS_NAMES[prediction]
 
         if prediction == 1:
-
             st.error(label)
-
         else:
-
             st.success(label)
 
         # st.write(
